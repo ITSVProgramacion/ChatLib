@@ -67,8 +67,15 @@ public class ClienteChat {
         }        
     }
     
-    public void EnviarMensaje(String usuario, String mensaje) {
-        flujoSalida.println(usuario + " :" + mensaje);
+    /**
+     * Implementar este metodo cuando se desee enviar un mensaje.
+     * @param usuario
+     * @param mensaje 
+     */
+    public void enviarMensaje(String usuario, String mensaje) {
+        if(!usuario.equals("") && !mensaje.equals("")) {
+            flujoSalida.println(usuario + " :" + mensaje);
+        }
     }
     
     private class LectorRemoto implements Runnable {
